@@ -2,6 +2,7 @@ package br.com.joaopaulo.conversor.view;
 
 import javax.swing.JOptionPane;
 
+import br.com.joaopaulo.conversor.calculadora.Conversor;
 import br.com.joaopaulo.conversor.calculadora.VerificaDados;
 
 public class ConversorFrame {
@@ -36,7 +37,7 @@ public class ConversorFrame {
 	}
 
 	private void selecioneMoeda(double valor) {
-		Object[] opcoes = { "De Reais a Dólar", // 0
+		String[] opcoes = { "De Reais a Dólar", // 0
 				"De Reais a Euro", // 1
 				"De Reais a Libras Esterlinas", // 2
 				"De Reais a Peso argentino", // 3
@@ -48,16 +49,20 @@ public class ConversorFrame {
 				"De Peso Chileno a Reais" // 9
 		};
 
-		Object valorSelecionado = JOptionPane.showInputDialog(null,
+		String tipoDeConversao = (String) JOptionPane.showInputDialog(null,
 				"Escolha a moeda para qual você deseja converter seu dinheiro", "Moedas",
 				JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[0]);
-
+		
+		Conversor conversor = new Conversor();
+		String  valorConvertido = conversor.converterMoeda(tipoDeConversao, valor);
+		RetornaValor(valorConvertido);
 		desejaContinuar();
 
 	}
 
 	public void RetornaValor(String valor) {
-		JOptionPane.showInputDialog("O valor da conversão é de: " + valor + ".");
+		JOptionPane.showMessageDialog(null, "O valor da conversão é de: " + valor + ".");
+
 	}
 
 	public void desejaContinuar() {
