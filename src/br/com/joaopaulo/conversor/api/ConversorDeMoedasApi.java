@@ -4,15 +4,20 @@ import java.io.IOException;
 
 import org.json.JSONObject;
 
+import br.com.joaopaulo.conversor.calculadora.TipoMoedaEnum;
 import br.com.joaopaulo.conversor.modelo.ConversorJson;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
+/**
+ * 
+ * @author João Paulo Farias Lima
+ *
+ */
 public class ConversorDeMoedasApi {
 
 	// Erro de execução
-	public double converterMoeda(TipoMoeda moedaInicial, TipoMoeda moedaFinal, double valor) {
+	public double converterMoeda(TipoMoedaEnum moedaInicial, TipoMoedaEnum moedaFinal, double valor) {
 		OkHttpClient cliente = new OkHttpClient().newBuilder().build();
 
 		Request request = new Request.Builder()

@@ -1,6 +1,11 @@
-package br.com.joaopaulo.conversor.api;
-
-public enum TipoMoeda {
+package br.com.joaopaulo.conversor.calculadora;
+/**
+ * 
+ * Enum responsável por armazenar as siglas das moedas utilizadas no conversor.
+ * @author João Paulo
+ *
+ */
+public enum TipoMoedaEnum {
 	REAL("BRL"),
 	DOLLAR_AMERICANO("USD"),
 	LIBRAS_ESTERLINAS("GBP"),
@@ -10,7 +15,7 @@ public enum TipoMoeda {
 	
 	private String tipo;
 	
-	TipoMoeda(String tipo) {
+	TipoMoedaEnum(String tipo) {
 		this.tipo = tipo;
 	}
 	
