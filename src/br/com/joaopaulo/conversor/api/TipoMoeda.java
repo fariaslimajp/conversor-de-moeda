@@ -5,7 +5,8 @@ public enum TipoMoeda {
 	DOLLAR_AMERICANO("USD"),
 	LIBRAS_ESTERLINAS("GBP"),
 	PESO_ARGENTINO("ARS"),
-	PESO_CHILENO("ARS");
+	PESO_CHILENO("ARS"),
+	EURO("EUR");
 	
 	private String tipo;
 	

@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import br.com.joaopaulo.conversor.calculadora.Conversor;
 import br.com.joaopaulo.conversor.calculadora.VerificaDados;
 
-public class ConversorFrame {
+public class ConversorView {
 
 	public void MenuPrincipal() {
 		Object[] opcoes = { "Conversor de Moedas", "Conversor de Temperatura" };
@@ -42,21 +42,23 @@ public class ConversorFrame {
 				"De Reais a Libras Esterlinas", // 2
 				"De Reais a Peso argentino", // 3
 				"De Reais a Peso Chileno", // 4
-				"De Dólar a Reais", // 5
-				"De Euro a Reais", // 6
-				"De Libras Esterlinas a Reais", // 7
-				"De Peso argentino a  Reais", // 8
-				"De Peso Chileno a Reais" // 9
+				"De Reais a Euro", // 5
+				"De Dólar a Reais", // 6
+				"De Euro a Reais", // 7
+				"De Libras Esterlinas a Reais", // 8
+				"De Peso argentino a  Reais", // 9
+				"De Peso Chileno a Reais" // 10
 		};
 
 		String tipoDeConversao = (String) JOptionPane.showInputDialog(null,
 				"Escolha a moeda para qual você deseja converter seu dinheiro", "Moedas",
 				JOptionPane.INFORMATION_MESSAGE, null, opcoes, opcoes[0]);
-		
+
 		Conversor conversor = new Conversor();
-		String  valorConvertido = conversor.converterMoeda(tipoDeConversao, valor);
+		String valorConvertido = conversor.converterMoeda(tipoDeConversao, valor);
 		RetornaValor(valorConvertido);
 		desejaContinuar();
+		return;
 
 	}
 
@@ -72,12 +74,12 @@ public class ConversorFrame {
 
 		if (retorno == 1) {
 			JOptionPane.showMessageDialog(null, "Programa Finalizado.");
-			return;
+			System.exit(0);
 		}
 
 		if (retorno == 2) {
 			JOptionPane.showMessageDialog(null, "Programa Concluido!");
-			return;
+			System.exit(0);
 		}
 
 		MenuPrincipal();
